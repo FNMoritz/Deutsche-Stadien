@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deutsche Stadien</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #111;
+      color: #fff;
+      overflow: hidden;
+    }
+
+ 
+
+ 
+
+ 
+
+    /* Dynamischer Hintergrund */
+    #background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/3/3f/BVB_Logo.svg') center no-repeat;
+      background-size: cover;
+      z-index: -1;
+      animation: backgroundAnimation 20s infinite linear;
+    }
+
+ 
+
+ 
+
+ 
+
+    @keyframes backgroundAnimation {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+
+ 
+
+ 
+
+ 
+
+    /* Container für den Splashscreen */
+    #splashscreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(151, 30, 30, 0.6); /* Dunkler Overlay-Effekt */
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+   
+    /* Overlay Text */
+    .splash-overlay {
+      position: absolute;
+      top: 10%;
+      width: 100%;
+      text-align: center;
+      color: #f1eded;  /* BVB-Gelb */
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.5em;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+      z-index: 1010;
+      opacity: 0;
+      animation: fadeIn 2s ease-out forwards;
+    }
+
+ 
+
+ 
+
+ 
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+ 
+
+ 
+
+ 
+
+    /* Video Styling */
+    #splashscreen video {
+      width: 180%;           /* 80% der Bildschirmbreite */
+      max-width: 800px;      /* maximal 800px */
+      border: 4px solid #ff0000;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      object-fit: contain;   /* Zeigt das gesamte Video */
+      z-index: 1000;
+    }
+   
+   
+
+ 
+
+    /* Glühende Text-Effekte */
+    .glow {
+      text-shadow: 0 0 20px rgba(250, 250, 250, 0.8), 0 0 30px rgba(231, 231, 227, 0.6), 0 0 40px rgba(182, 181, 180, 0.4);
+    }
+
+ 
+
+ 
+
+ 
+
+    /* Hauptinhalt der Seite (optional) */
+    #main-content {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      padding: 40px;
+      text-align: center;
+      background-color: #111;
+      min-height: 100vh;
+    }
+   
+    .show-main-content {
+      display: block;
+      opacity: 1;
+    }
+     /* Text */
+     p {
+      color: #c5c5c5;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+ 
+
+ 
+
+ 
+
+  <!-- Dynamischer Hintergrund -->
+  <div id="background"></div>
+
+ 
+
+ 
+
+ 
+
+  <!-- Splashscreen Container -->
+  <div id="splashscreen">
+    <!-- Überschrift als Overlay -->
+    <div class="splash-overlay glow">
+      Willkommen bei den Deutschen Stadien! <br> (Um auf die Hauptseite zu gelangen, klicken Sie auf das Video)
+    </div>
+    <!-- Eingebettetes Video (lokales MP4-Video) -->
+    <video id="splash-video" autoplay controls>
+      <source src="./25 (Fan Made).mp4" type="video/mp4">
+    </video>
+
+ 
+
+ 
+
+ 
+
+  <script>
+     // JavaScript zum Weiterleiten nach dem Ende des Videos
+     document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('splash-video');
+     
+      video.addEventListener('ended', function() {
+        window.location.href = 'file:///Z:/01%20Oberstufe/2024-2025/ASO/WEB/NEU/Vorlage%201/index.html'; // Ersetze dies durch die URL deiner Hauptseite
+      });
+    });
+  </script>
+ 
+
+ 
+
+  <!-- Hauptinhalt der Seite (optional) -->
+  <div id="main-content">
+    <h1>Hauptseite</h1>
+    <p>Hier beginnt der Hauptinhalt!</p>
+  </div>
+
+ 
+
+ 
+
+ 
+
+</body>
+</html>

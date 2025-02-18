@@ -189,13 +189,14 @@
 
   <script>
      // JavaScript zum Weiterleiten nach dem Ende des Videos
-     document.addEventListener('DOMContentLoaded', function() {
-      const video = document.getElementById('splash-video');
-     
-      video.addEventListener('ended', function() {
-       <link href="./start.html">; // Ersetze dies durch die URL deiner Hauptseite
-      });
-    });
+document.addEventListener('DOMContentLoaded', function() {
+  const video = document.getElementById('splash-video');
+  
+  video.addEventListener('ended', function() {
+    // Verwende einen relativen Pfad, um auf die start.html-Seite zu verweisen
+    window.location.href = 'start.html';
+  });
+});
   </script>
  
 

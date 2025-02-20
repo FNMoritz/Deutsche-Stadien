@@ -117,7 +117,31 @@
     }
    
    
+ #enter-button {
+      position: absolute;
+      bottom: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 15px 30px;
+      font-size: 1.5em;
+      background-color: #FDE100; /* BVB-Gelb */
+      color: #000;
+      border: none;
+      cursor: pointer;
+      border-radius: 50px;
+      text-decoration: none;
+      z-index: 1010;
+      font-family: 'Oswald', sans-serif;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+      transition: background-color 0.3s, transform 0.3s;
+    }
 
+ 
+
+    #enter-button:hover {
+      background-color: #ffd700;
+      transform: translateX(-50%) scale(1.1);
+    }
  
 
     /* Glühende Text-Effekte */
@@ -177,7 +201,7 @@
       Willkommen bei den Deutschen Stadien! <br> (Um auf die Hauptseite zu gelangen, klicken Sie auf das Video)
     </div>
     <!-- Eingebettetes Video (lokales MP4-Video) -->
-    <video id="splash-video" autoplay>
+    <video id="splash-video" autoplay controls>
       <source src="./25 (Fan Made).mp4" type="video/mp4">
     </video>
 
@@ -199,7 +223,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
   </script>
  
-
+<!-- Button als Link zur Hauptseite -->
+    <a id="enter-button" href="https://fnmoritz.github.io/Test/">Zur Hauptseite</a>
+  </div>
  
 
   <!-- Hauptinhalt der Seite (optional) -->
